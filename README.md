@@ -8,16 +8,16 @@ SeA-Sort is a beautiful and educational sorting algorithm visualizer. It turns c
 🧠 Step-by-Step Visualization – See each iteration in action.
 
 Supports Multiple Sorting Algorithms
--Insertion Sort
--Selection Sort
--Bubble Sort
--Merge Sort
--Quick Sort
--Heap Sort
--Shell Sort
--Counting Sort
--Radix Sort
--Bucket Sort
+Insertion Sort,
+Selection Sort,
+Bubble Sort,
+Merge Sort,
+Quick Sort,
+Heap Sort,
+Shell Sort,
+Counting Sort,
+Radix Sort,
+Bucket Sort.
 
 Algorithm Descriptions – Learn the logic behind each sort.
 
