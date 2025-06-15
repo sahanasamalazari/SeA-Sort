@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div id="welcome-page" class="page welcome-page">
+        <div class="welcome-hero">
+            <div class="hero-background">
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">Sorting Algorithm Visualizer</h1>
+                <p class="hero-subtitle">Master the art of sorting through interactive visualization</p>
+                <p class="hero-description">
+                    Explore and understand how different sorting algorithms work with beautiful, 
+                    step-by-step visual demonstrations. Perfect for students, developers, and 
+                    anyone curious about computer science fundamentals.
+                </p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <div class="feature-icon">🎯</div>
+                        <span>6 Popular Algorithms</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <span>Real-time Visualization</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📚</div>
+                        <span>Step-by-step Explanations</span>
+                    </div>
+                    
+                </div>
+                <button id="get-started-btn" class="cta-button">
+                    Get Started
+                    <span class="button-arrow">→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Algorithm Selection Page -->
+    <div id="selection-page" class="page selection-page hidden">
+        <div class="selection-header">
+            <button id="back-to-welcome" class="back-button">
+                ← Back to Home
+            </button>
+            <h1 class="selection-title">Choose Your Algorithm</h1>
+            <p class="selection-subtitle">Select a sorting algorithm to visualize and learn</p>
+        </div>
+
+        <div class="algorithms-grid">
+            <div class="algorithm-card" data-algorithm="bubble">
+                <div class="card-header">
+                    <div class="algorithm-icon bubble-icon">🫧</div>
+                    <h3>Bubble Sort</h3>
+                </div>
+                <div class="card-content">
+                    <p class="algorithm-brief">Simple comparison-based algorithm that repeatedly steps through the list</p>
+                    <div class="complexity-badges">
+                        <span class="complexity-badge time">O(n²)</span>
+                        <span class="complexity-badge space">O(1)</span>
+                        <span class="complexity-badge stable">Stable</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value beginner">Beginner</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best for:</span>
+                            <span class="stat-value">Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="algorithm-card" data-algorithm="selection">
+                <div class="card-header">
+                    <div class="algorithm-icon selection-icon">🎯</div>
+                    <h3>Selection Sort</h3>
+                </div>
+                <div class="card-content">
+                    <p class="algorithm-brief">Finds the minimum element and places it at the beginning</p>
+                    <div class="complexity-badges">
+                        <span class="complexity-badge time">O(n²)</span>
+                        <span class="complexity-badge space">O(1)</span>
+                        <span class="complexity-badge unstable">Unstable</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value beginner">Beginner</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best for:</span>
+                            <span class="stat-value">Small datasets</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="algorithm-card" data-algorithm="insertion">
+                <div class="card-header">
+                    <div class="algorithm-icon insertion-icon">📝</div>
+                    <h3>Insertion Sort</h3>
+                </div>
+                <div class="card-content">
+                    <p class="algorithm-brief">Builds the sorted array one element at a time</p>
+                    <div class="complexity-badges">
+                        <span class="complexity-badge time">O(n²)</span>
+                        <span class="complexity-badge space">O(1)</span>
+                        <span class="complexity-badge stable">Stable</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value intermediate">Intermediate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best for:</span>
+                            <span class="stat-value">Nearly sorted data</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="algorithm-card" data-algorithm="merge">
+                <div class="card-header">
+                    <div class="algorithm-icon merge-icon">🔀</div>
+                    <h3>Merge Sort</h3>
+                </div>
+                <div class="card-content">
+                    <p class="algorithm-brief">Efficient divide-and-conquer algorithm</p>
+                    <div class="complexity-badges">
+                        <span class="complexity-badge time efficient">O(n log n)</span>
+                        <span class="complexity-badge space">O(n)</span>
+                        <span class="complexity-badge stable">Stable</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value advanced">Advanced</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best for:</span>
+                            <span class="stat-value">Large datasets</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="algorithm-card" data-algorithm="quick">
+                <div class="card-header">
+                    <div class="algorithm-icon quick-icon">⚡</div>
+                    <h3>Quick Sort</h3>
+                </div>
+                <div class="card-content">
+                    <p class="algorithm-brief">Fast pivot-based sorting algorithm</p>
+                    <div class="complexity-badges">
+                        <span class="complexity-badge time efficient">O(n log n)</span>
+                        <span class="complexity-badge space">O(log n)</span>
+                        <span class="complexity-badge unstable">Unstable</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value advanced">Advanced</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best for:</span>
+                            <span class="stat-value">General purpose</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="algorithm-card" data-algorithm="heap">
+                <div class="card-header">
+                    <div class="algorithm-icon heap-icon">🏔️</div>
+                    <h3>Heap Sort</h3>
+                </div>
+                <div class="card-content">
+                    <p class="algorithm-brief">Uses binary heap data structure for sorting</p>
+                    <div class="complexity-badges">
+                        <span class="complexity-badge time efficient">O(n log n)</span>
+                        <span class="complexity-badge space">O(1)</span>
+                        <span class="complexity-badge unstable">Unstable</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value advanced">Advanced</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best for:</span>
+                            <span class="stat-value">Memory efficiency</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="algorithm-card" data-algorithm="shell">
+                <div class="card-header">
+                    <div class="algorithm-icon shell-icon">🐚</div>
+                    <h3>Shell Sort</h3>
+                </div>
+                <div class="card-content">
+                    <p class="algorithm-brief">Generalizes insertion sort by allowing exchanges of far apart elements</p>
+                    <div class="complexity-badges">
+                        <span class="complexity-badge time">O(n^(3/2))</span>
+                        <span class="complexity-badge space">O(1)</span>
+                        <span class="complexity-badge unstable">Unstable</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value intermediate">Intermediate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best for:</span>
+                            <span class="stat-value">Medium datasets</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="algorithm-card" data-algorithm="counting">
+                <div class="card-header">
+                    <div class="algorithm-icon counting-icon">🔢</div>
+                    <h3>Counting Sort</h3>
+                </div>
+                <div class="card-content">
+                    <p class="algorithm-brief">Non-comparison integer sorting algorithm using counting of key values</p>
+                    <div class="complexity-badges">
+                        <span class="complexity-badge time">O(n + k)</span>
+                        <span class="complexity-badge space">O(k)</span>
+                        <span class="complexity-badge stable">Stable</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value intermediate">Intermediate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best for:</span>
+                            <span class="stat-value">Integer keys</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="algorithm-card" data-algorithm="radix">
+                <div class="card-header">
+                    <div class="algorithm-icon radix-icon">📊</div>
+                    <h3>Radix Sort</h3>
+                </div>
+                <div class="card-content">
+                    <p class="algorithm-brief">Sorts data by grouping keys by individual digits</p>
+                    <div class="complexity-badges">
+                        <span class="complexity-badge time">O(d * (n + k))</span>
+                        <span class="complexity-badge space">O(n + k)</span>
+                        <span class="complexity-badge stable">Stable</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value advanced">Advanced</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best for:</span>
+                            <span class="stat-value">Integer keys</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="algorithm-card" data-algorithm="bucket">
+                <div class="card-header">
+                    <div class="algorithm-icon bucket-icon">🪣</div>
+                    <h3>Bucket Sort</h3>
+                </div>
+                <div class="card-content">
+                    <p class="algorithm-brief">Distributes elements into buckets and sorts them individually</p>
+                    <div class="complexity-badges">
+                        <span class="complexity-badge time">O(n + k)</span>
+                        <span class="complexity-badge space">O(n)</span>
+                        <span class="complexity-badge stable">Stable</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value intermediate">Intermediate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best for:</span>
+                            <span class="stat-value">Uniformly distributed data</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Visualizer -->
+    <div id="visualizer-page" class="page visualizer-page hidden">
+        <!-- Header -->
+        <header class="visualizer-header">
+            <div class="header-left">
+                <button id="back-to-selection" class="back-button">← Back to Selection</button>
+                <h1 class="visualizer-title">Sorting Visualizer</h1>
+            </div>
+            <div class="algorithm-badge" id="current-algorithm-badge">
+                <span id="current-algorithm-name">Bubble Sort</span>
+            </div>
+        </header>
+
+        <!-- Algorithm Info Panel -->
+        <div class="info-panel">
+            <div class="algorithm-details">
+                <div class="algorithm-header">
+                    <div class="algorithm-icon-large" id="algorithm-icon-large">🫧</div>
+                    <div class="algorithm-meta">
+                        <h3 id="algorithm-name">Bubble Sort</h3>
+                        <p id="algorithm-description"></p>
+                    </div>
+                </div>
+                <div class="complexity-grid">
+                    <div class="complexity-card">
+                        <div class="complexity-label">Time Complexity</div>
+                        <div class="complexity-value" id="time-complexity">O(n²)</div>
+                    </div>
+                    <div class="complexity-card">
+                        <div class="complexity-label">Space Complexity</div>
+                        <div class="complexity-value" id="space-complexity">O(1)</div>
+                    </div>
+                    <div class="complexity-card">
+                        <div class="complexity-label">Stability</div>
+                        <div class="complexity-value" id="stability">Stable</div>
+                    </div>
+                    <div class="complexity-card">
+                        <div class="complexity-label">In-Place</div>
+                        <div class="complexity-value" id="in-place">Yes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls-panel">
+            <div class="control-section">
+                <div class="control-group">
+                    <label for="array-size">Array Size</label>
+                    <div class="slider-container">
+                        <input type="range" id="array-size" min="10" max="100" value="30">
+                        <span id="array-size-value" class="slider-value">30</span>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label for="speed">Animation Speed</label>
+                    <select id="speed" class="control-select">
+                        <option value="slow">Slow (1s)</option>
+                        <option value="medium" selected>Medium (0.5s)</option>
+                        <option value="fast">Fast (0.2s)</option>
+                        <option value="instant">Instant</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="control-buttons">
+                <button id="generate-array" class="control-btn secondary">Generate New Array</button>
+                <button id="play-pause" class="control-btn primary">Play</button>
+                <button id="step" class="control-btn secondary">Step</button>
+                <button id="reset" class="control-btn secondary">Reset</button>
+            </div>
+        </div>
+
+        <!-- Visualization Container -->
+        <div class="visualization-container">
+            <div id="array-container" class="array-container"></div>
+        </div>
+
+        <!-- Step Explanation -->
+        <div class="step-panel">
+            <div class="step-header">
+                <h4>Current Step</h4>
+                <div class="step-counter">
+                    <span id="current-step-number">0</span> / <span id="total-steps">0</span>
+                </div>
+            </div>
+            <p id="step-description">Click play to start the visualization</p>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend-panel">
+            <h4>Legend</h4>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color comparing"></div>
+                    <span>Comparing</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color swapping"></div>
+                    <span>Swapping</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color sorted"></div>
+                    <span>Sorted</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color current"></div>
+                    <span>Current</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color pivot"></div>
+                    <span>Pivot</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
